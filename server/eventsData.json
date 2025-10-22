@@ -1,0 +1,92 @@
+{
+  "events": [
+    {
+      "_id": "1",
+      "name": "Cosmic Music Festival",
+      "description": "A journey through sound and space with top DJs from around the galaxy.",
+      "date": "2025-10-29T18:00:00.000Z",
+      "location": "Starlight Amphitheater",
+      "price": 150,
+      "totalSeats": 5000,
+      "bookedSeats": 2345,
+      "imageUrl": "https://picsum.photos/seed/event1/600/400"
+    },
+    {
+      "_id": "2",
+      "name": "Tech Innovations Summit 2024",
+      "description": "Explore the future of technology, AI, and robotics. A must-attend for tech enthusiasts.",
+      "date": "2025-11-05T09:00:00.000Z",
+      "location": "Quantum Convention Center",
+      "price": 300,
+      "totalSeats": 1500,
+      "bookedSeats": 800,
+      "imageUrl": "https://picsum.photos/seed/event2/600/400"
+    },
+    {
+      "_id": "3",
+      "name": "Gourmet Food Fair",
+      "description": "Taste exquisite dishes from world-renowned chefs. A paradise for food lovers.",
+      "date": "2025-11-12T12:00:00.000Z",
+      "location": "Central City Park",
+      "price": 75,
+      "totalSeats": 2000,
+      "bookedSeats": 1950,
+      "imageUrl": "https://picsum.photos/seed/event3/600/400"
+    },
+    {
+      "_id": "4",
+      "name": "Midnight Movie Marathon",
+      "description": "A classic horror movie marathon under the stars. Bring your own blankets!",
+      "date": "2025-11-29T22:30:00.000Z",
+      "location": "Eclipse Drive-In",
+      "price": 25,
+      "totalSeats": 300,
+      "bookedSeats": 150,
+      "imageUrl": "https://picsum.photos/seed/event4/600/400"
+    },
+    {
+      "_id": "5",
+      "name": "Winter Artisan Market",
+      "description": "Handmade crafts, local food vendors, and live music — perfect for holiday shopping.",
+      "date": "2025-12-10T10:00:00.000Z",
+      "location": "Riverside Hall",
+      "price": 10,
+      "totalSeats": 800,
+      "bookedSeats": 420,
+      "imageUrl": "https://picsum.photos/seed/event5/600/400"
+    },
+    {
+      "_id": "6",
+      "name": "New Year Gala Ball",
+      "description": "Black-tie celebration with a gourmet dinner, champagne, and live orchestra.",
+      "date": "2026-01-14T19:00:00.000Z",
+      "location": "Grand Meridian Hotel",
+      "price": 450,
+      "totalSeats": 600,
+      "bookedSeats": 530,
+      "imageUrl": "https://picsum.photos/seed/event6/600/400"
+    },
+    {
+      "_id": "7",
+      "name": "Outdoor Yoga & Wellness Retreat",
+      "description": "A weekend of guided yoga, meditation, and holistic workshops in nature.",
+      "date": "2026-02-20T07:30:00.000Z",
+      "location": "Willow Lake Retreat",
+      "price": 120,
+      "totalSeats": 200,
+      "bookedSeats": 85,
+      "imageUrl": "https://picsum.photos/seed/event7/600/400"
+    },
+    {
+      "_id": "8",
+      "name": "Spring Street Art Festival",
+      "description": "Live mural painting, food trucks, and interactive street art installations.",
+      "date": "2026-03-15T11:00:00.000Z",
+      "location": "Old Town District",
+      "price": 0,
+      "totalSeats": 10000,
+      "bookedSeats": 4321,
+      "imageUrl": "https://picsum.photos/seed/event8/600/400"
+    }
+  ]
+}
