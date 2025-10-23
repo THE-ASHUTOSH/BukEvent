@@ -17,14 +17,14 @@ const RegisterPage: React.FC = () => {
     setError('');
     setLoading(true);
     try {
-      await register(name, email, password);
-      navigate('/profile');
-    } catch (err) {
-      setError('Failed to register. Please try again.');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+        await register(name, email, password);
+        navigate('/profile');
+      } catch (err) {
+        setError(err.message.toString() ||'Failed to register. Please try again.');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
   };
 
   return (
