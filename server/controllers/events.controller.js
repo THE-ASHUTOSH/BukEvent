@@ -18,6 +18,7 @@ try {
 }
 
 function returnEvents(req, res) {
+    console.log("Returning events:", events);
     return res.json(events);
 }
 

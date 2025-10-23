@@ -2,6 +2,8 @@ import React, { createContext, useState, useContext, useEffect, ReactNode } from
 import { User } from '../types';
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';  // Added fallback URL
+
 interface AuthContextType {
   user: User | null;
   token: string | null;
@@ -32,7 +34,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const fetchUserProfile = async () => {
       if (token) {
         try {
-          const response = await axios.get('http://127.0.0.1:5000/profile', {
+          const response = await axios.get(`${API_URL}/profile`, {
             headers: { 
               'Authorization': `Bearer ${token}` 
             },
@@ -69,24 +71,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // if (!response.ok) throw new Error('Login failed');
     // const { token, user } = await response.json();
 
-    try{
-      const response = await axios.post("http://127.0.0.1:5000/signin", {
-        email,
-        password  
-      },{
-        withCredentials: true
-      });
-      console.log("Login response:", response.data);
-      const { token, user } = response.data;
-      localStorage.setItem('token', token);
-      localStorage.setItem('user', JSON.stringify(user));
-      localStorage.setItem('isAdmin', String(user.isAdmin));
-      setToken(token);
-      setUser(user);
-    }catch(error){
-      console.error("Error logging in:", error.response?.data || error.message);
-      console.log(error)
-      throw new Error(error.response?.data.message ||'Login failed');
+    try {
+        const response = await axios.post(`${API_URL}/signin`, {
+            email,
+            password  
+        },{
+            withCredentials: true
+        });
+        console.log("Login response:", response.data);
+        const { token, user } = response.data;
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('isAdmin', String(user.isAdmin));
+        setToken(token);
+        setUser(user);
+    } catch (error) {
+        console.error("Error logging in:", error.response?.data || error.message);
+        console.log(error)
+        throw new Error(error.response?.data.message || 'Login failed');
     }
 
     // Placeholder logic
@@ -108,19 +110,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     //   headers: { 'Content-Type': 'application/json' },
     //   body: JSON.stringify({ name, email, password }),
     // });
-    try{
-      const response = await axios.post("http://127.0.0.1:5000/register", {
-        username,
-        email,
-        password
-      });
-      console.log("Registration response:", response.data);
-  
-    }catch(error){
-      console.error("Error registering user:", error.response?.data || error.message);
-      console.log(error)
-      throw new Error(error.response?.data.message ||'Registration failed');
-  
+    try {
+        const response = await axios.post(`${API_URL}/register`, {
+            username,
+            email,
+            password
+        });
+        console.log("Registration response:", response.data);
+        
+    } catch (error) {
+        console.error("Error registering user:", error.response?.data || error.message);
+        console.log(error)
+        throw new Error(error.response?.data.message || 'Registration failed');
     }
     // if (!response.ok) throw new Error('Registration failed');
     // const { token, user } = await response.json();

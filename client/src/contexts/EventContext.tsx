@@ -1,9 +1,8 @@
-
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { Event } from '../types';
 import axios from 'axios';
 
-
+const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
 
 interface EventContextType {
   events: Event[];
@@ -23,12 +22,8 @@ export const EventProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const fetchEvents = async () => {
     setLoading(true);
-    // TODO: API Integration - GET /api/events
-    // const response = await fetch('/api/events');
-    // const data = await response.json();
-    // setEvents(data);
     try{
-      const response = await axios.get('http://127.0.0.1:5000/events');
+      const response = await axios.get(`${API_URL}/events`);
       console.log("Fetched events:", response.data);
       setEvents(response.data);
       setLoading(false);
