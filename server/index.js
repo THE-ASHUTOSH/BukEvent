@@ -23,14 +23,11 @@ app.use(express.json());
 app.use(urlencoded({ extended: true }));
 
 connectdb();
+console.log("CORS allowed origin:", process.env.FRONTEND_URL);
 
 app.use(eventRoutes);
 app.use(authRoutes);
 
-app.get('/',(req,res)=>{
-    res.cookie('token', "ashutosh")
-    res.send("hello from backend")
-})
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
